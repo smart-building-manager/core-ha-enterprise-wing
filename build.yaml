@@ -1,4 +1,4 @@
-image: ghcr.io/smart-building-manager/{arch}-my-smart-homes-enterprise-wing
+image: ghcr.io/smart-building-manager/{arch}-my-smart-homes
 build_from:
   aarch64: ghcr.io/home-assistant/aarch64-homeassistant-base:2025.02.1
   armhf: ghcr.io/home-assistant/armhf-homeassistant-base:2025.02.1

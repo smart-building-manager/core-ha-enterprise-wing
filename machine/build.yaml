@@ -1,4 +1,4 @@
-image: ghcr.io/smart-building-manager/{machine}-my-smart-homes-enterprise-wing
+image: ghcr.io/smart-building-manager/{machine}-my-smart-homes
 build_from:
   aarch64: "ghcr.io/my-smart-homes/aarch64-my-smart-homes:latest"
   armv7: "ghcr.io/my-smart-homes/armv7-my-smart-homes:latest"
@@ -13,4 +13,4 @@ cosign:
   identity: https://github.com/smart-building-manager/core/.*
 labels:
   io.hass.type: core
-  org.opencontainers.image.source: https://github.com/smart-building-manager/core-ha-enterprise-wing
+  org.opencontainers.image.source: https://github.com/smart-building-manager/core
