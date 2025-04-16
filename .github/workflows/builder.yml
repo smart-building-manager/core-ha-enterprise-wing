@@ -202,7 +202,7 @@ jobs:
           password: ${{ secrets.GIT_USER_TOKEN_V2 }}
 
       - name: Build base image
-        uses: my-smart-homes/builder@master
+        uses: smart-building-manager/builder@master
         with:
           args: |
             $BUILD_ARGS \
@@ -272,7 +272,7 @@ jobs:
           password: ${{ secrets.GIT_USER_TOKEN_V2 }}
 
       - name: Build base image
-        uses: my-smart-homes/builder@master
+        uses: smart-building-manager/builder@master
         with:
           args: |
             $BUILD_ARGS \
@@ -297,7 +297,7 @@ jobs:
           token: ${{ secrets.GIT_TOKEN }}
 
       - name: Update version file
-        uses: my-smart-homes/actions/helpers/version-push@master
+        uses: smart-building-manager/actions/helpers/version-push@master
         with:
           key: "homeassistant[]"
           key-description: "Home Assistant Core"
@@ -307,7 +307,7 @@ jobs:
 
       - name: Update version file (stable -> beta)
         if: needs.init.outputs.channel == 'stable'
-        uses: my-smart-homes/actions/helpers/version-push@master
+        uses: smart-building-manager/actions/helpers/version-push@master
         with:
           key: "homeassistant[]"
           key-description: "Home Assistant Core"
@@ -329,7 +329,7 @@ jobs:
       fail-fast: false
       matrix:
         # registry: ["ghcr.io/my-smart-homes", "docker.io/homeassistant"]
-        registry: ["ghcr.io/my-smart-homes"]
+        registry: ["ghcr.io/smart-building-manager"]
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v4.2.2
@@ -347,7 +347,7 @@ jobs:
       #     password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Login to GitHub Container Registry
-        if: matrix.registry == 'ghcr.io/my-smart-homes'
+        if: matrix.registry == 'ghcr.io/smart-building-manager'
         uses: docker/login-action@v3.3.0
         with:
           registry: ghcr.io
