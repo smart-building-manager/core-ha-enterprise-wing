@@ -1,4 +1,4 @@
-image: ghcr.io/my-smart-homes/{machine}-my-smart-homes
+image: ghcr.io/smart-building-manager/{machine}-my-smart-homes-enterprise-wing
 build_from:
   aarch64: "ghcr.io/my-smart-homes/aarch64-my-smart-homes:latest"
   armv7: "ghcr.io/my-smart-homes/armv7-my-smart-homes:latest"
@@ -6,11 +6,11 @@ build_from:
   amd64: "ghcr.io/my-smart-homes/amd64-my-smart-homes:latest"
   i386: "ghcr.io/my-smart-homes/i386-my-smart-homes:latest"
 codenotary:
-  signer: notary@my-smart-homes.io
-  base_image: notary@my-smart-homes.io
+  signer: notary@smart-building-manager.io
+  base_image: notary@smart-building-manager.io
 cosign:
-  base_identity: https://github.com/my-smart-homes/core/.*
-  identity: https://github.com/my-smart-homes/core/.*
+  base_identity: https://github.com/smart-building-manager/core/.*
+  identity: https://github.com/smart-building-manager/core/.*
 labels:
   io.hass.type: core
-  org.opencontainers.image.source: https://github.com/my-smart-homes/core
+  org.opencontainers.image.source: https://github.com/smart-building-manager/core-ha-enterprise-wing
