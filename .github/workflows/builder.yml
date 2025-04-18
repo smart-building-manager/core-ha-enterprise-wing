@@ -199,7 +199,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GIT_USER_TOKEN_V2 }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build base image
         uses: smart-building-manager/builder@master
@@ -269,7 +269,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GIT_USER_TOKEN_V2 }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build base image
         uses: smart-building-manager/builder@master
@@ -303,7 +303,7 @@ jobs:
           key-description: "Home Assistant Core"
           version: ${{ needs.init.outputs.version }}
           channel: ${{ needs.init.outputs.channel }}
-          git-token: ${{ secrets.GIT_USER_TOKEN_V2 }}
+          git-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update version file (stable -> beta)
         if: needs.init.outputs.channel == 'stable'
@@ -313,7 +313,7 @@ jobs:
           key-description: "Home Assistant Core"
           version: ${{ needs.init.outputs.version }}
           channel: beta
-          git-token: ${{ secrets.GIT_USER_TOKEN_V2 }}
+          git-token: ${{ secrets.GITHUB_TOKEN }}
 
   publish_container:
     name: Publish meta container for ${{ matrix.registry }}
